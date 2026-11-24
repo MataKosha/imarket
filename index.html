@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f7">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: http:; connect-src https://docs.google.com https://*.googleusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>iMarket Store — Купить iPhone, MacBook, iPad, Apple Watch · Астана, Орал, Атырау</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f5f5f7;
+  --card:#ffffff;
+  --ink:#1d1d1f;
+  --mut:#6e6e73;
+  --blue:#0071e3;
+  --blue-h:#0077ed;
+  --wa:#1fb35a;
+  --line:rgba(0,0,0,.08);
+  --shadow:0 4px 20px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.03);
+  --shadow-h:0 18px 40px rgba(0,0,0,.1);
+  --r:24px;
+  --pad:max(20px, calc((100vw - 1180px) / 2));
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.38;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));
+}
+::selection{background:var(--blue);color:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+.wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+
+/* Apple Global Nav */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,245,247,.86);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav-bar{height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.apple-logo{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;letter-spacing:-.02em}
+.apple-logo svg{width:16px;height:19px;fill:currentColor;margin-top:-2px}
+.nav-links{display:none;align-items:center;gap:24px;font-size:12px;color:rgba(29,29,31,.82);font-weight:400}
+.nav-links a:hover,.nav-links button:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.city-pill{
+  height:30px;padding:0 11px;border-radius:999px;
+  background:rgba(0,0,0,.055);border:0;
+  font-size:12px;font-weight:500;color:var(--ink);cursor:pointer;
+}
+.lang-pill{display:inline-flex;background:rgba(0,0,0,.055);border-radius:999px;padding:2px}
+.lang-pill button{height:26px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:600;color:var(--mut)}
+.lang-pill button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.nav-ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;color:var(--ink)}
+.nav-ico:hover{background:rgba(0,0,0,.055)}
+
+/* Apple Store Ribbon */
+.ribbon{
+  background:#fff;border-bottom:1px solid rgba(0,0,0,.05);
+  padding:11px 16px;text-align:center;font-size:13px;color:var(--ink);
+}
+.ribbon a{color:var(--blue);font-weight:500;margin-left:4px}
+.ribbon a:hover{text-decoration:underline}
+
+/* Store Hero Header */
+.store-hero{padding:44px 0 24px}
+.hero-row{display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.store-h1{
+  font-size:clamp(34px,5.4vw,52px);
+  font-weight:600;
+  letter-spacing:-.035em;
+  line-height:1.08;
+  max-width:740px;
+}
+.store-h1 span{color:var(--mut)}
+.specialist{display:flex;flex-direction:column;gap:14px;flex-shrink:0}
+.spec-item{display:flex;align-items:center;gap:12px;font-size:13px}
+.spec-av{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#1d1d1f,#48484c);color:#fff;
+  display:grid;place-items:center;font-weight:600;font-size:13px;flex-shrink:0;
+}
+.spec-item b{display:block;font-weight:600;color:var(--ink)}
+.spec-item a{color:var(--blue);font-weight:500}
+.spec-item a:hover{text-decoration:underline}
+
+/* Product Lineup Shelf */
+.lineup{
+  display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;
+  padding:8px var(--pad) 24px;
+}
+.lineup::-webkit-scrollbar{display:none}
+.lu-item{
+  flex:0 0 118px;display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:12px 8px;border-radius:18px;text-align:center;
+  transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s;
+}
+.lu-item:hover{transform:translateY(-3px);background:rgba(255,255,255,.7)}
+.lu-thumb{width:96px;height:66px;display:grid;place-items:center}
+.lu-thumb img{max-height:64px;width:auto;object-fit:contain;mix-blend-mode:multiply}
+.lu-item span{font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+
+/* Shelf Sections */
+.shelf-sec{padding:24px 0 36px}
+.shelf-hd{
+  padding:0 var(--pad);
+  margin-bottom:20px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.shelf-title{
+  font-size:clamp(24px,3.2vw,30px);
+  font-weight:600;
+  letter-spacing:-.028em;
+  line-height:1.15;
+}
+.shelf-title span{color:var(--mut)}
+.shelf-link{font-size:14px;font-weight:500;color:var(--blue);white-space:nowrap}
+.shelf-link:hover{text-decoration:underline}
+
+/* Horizontal Card Carousel (Новинки) */
+.rail{
+  display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:var(--pad);
+  padding:8px var(--pad) 24px;
+}
+.rail::-webkit-scrollbar{display:none}
+
+/* Store Showcase Card (Новинки) */
+.scard{
+  flex:0 0 320px;
+  scroll-snap-align:start;
+  background:var(--card);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:26px 24px 24px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:470px;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1);
+}
+.scard.dark{background:#000;color:#f5f5f7}
+.scard.dark .scard-sub,.scard.dark .scard-inst{color:#a1a1a6}
+.scard.dark .pw{background:transparent}
+@media(hover:hover){
+  .scard:hover{transform:scale(1.014);box-shadow:var(--shadow-h)}
+}
+.scard-kicker{
+  font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:#bf4800;margin-bottom:6px;min-height:15px;
+}
+.scard.dark .scard-kicker{color:#f56300}
+.scard-title{font-size:24px;font-weight:600;letter-spacing:-.025em;line-height:1.14}
+.scard-sub{font-size:13px;color:var(--mut);margin-top:4px}
+.scard-media{margin:14px 0;display:grid;place-items:center;height:210px}
+.pw{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;border-radius:16px}
+.pw .pimgx{max-height:198px;width:auto;max-width:100%;object-fit:contain;mix-blend-mode:multiply;transition:opacity .2s ease}
+.scard.dark .pw .pimgx{mix-blend-mode:normal}
+
+/* Swatches */
+.swatches{display:flex;align-items:center;justify-content:center;gap:8px;min-height:24px;margin:4px 0 10px}
+.sw{
+  width:15px;height:15px;border-radius:50%;
+  border:1px solid rgba(0,0,0,.22);
+  position:relative;transition:transform .15s;
+}
+.sw.on::after{
+  content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:1.5px solid var(--blue);
+}
+.scard.dark .sw.on::after{border-color:#fff}
+
+/* Memory pills */
+.card-mems{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.cmem{
+  height:26px;padding:0 9px;border-radius:999px;
+  font-size:11px;font-weight:500;color:var(--mut);
+  background:rgba(0,0,0,.045);transition:all .15s;
+}
+.cmem.on{background:var(--ink);color:#fff;font-weight:600}
+.scard.dark .cmem{background:rgba(255,255,255,.12);color:#d2d2d7}
+.scard.dark .cmem.on{background:#fff;color:#000}
+
+.scard-foot{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+  padding-top:12px;border-top:1px solid rgba(0,0,0,.06);
+}
+.scard.dark .scard-foot{border-top-color:rgba(255,255,255,.12)}
+.scard-price{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.scard-inst{font-size:11px;color:var(--mut);margin-top:2px}
+.buy-pill{
+  height:36px;padding:0 16px;border-radius:999px;
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:500;white-space:nowrap;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s,transform .15s;
+}
+.buy-pill:hover{background:var(--blue-h)}
+.buy-pill:active{transform:scale(.96)}
+
+/* =========================================================
+   УДОБНЫЙ КАТАЛОГ (Полноценная сетка с быстрыми фильтрами)
+   ========================================================= */
+.cat-sec{
+  padding:44px 0 48px;
+  background:#fff;
+  border-block:1px solid rgba(0,0,0,.06);
+}
+.cat-top{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-bottom:22px;
+}
+.cat-tabs{
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+  padding-bottom:4px;margin-bottom:16px;
+}
+.cat-tabs::-webkit-scrollbar{display:none}
+.ctab{
+  flex:0 0 auto;height:40px;padding:0 18px;border-radius:999px;
+  background:#f5f5f7;color:var(--ink);
+  font-size:14px;font-weight:500;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .15s;
+}
+.ctab:hover{background:#ebebef}
+.ctab.on{background:var(--ink);color:#fff;font-weight:600}
+
+.cat-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:12px 14px;border-radius:18px;background:#f5f5f7;
+  margin-bottom:24px;
+}
+.cat-filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.seg{display:inline-flex;background:rgba(0,0,0,.06);border-radius:999px;padding:3px}
+.seg button{
+  height:30px;padding:0 13px;border-radius:999px;
+  font-size:12px;font-weight:500;color:var(--mut);transition:all .15s;
+}
+.seg button.on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.sort-pill{
+  height:36px;padding:0 14px;border-radius:999px;
+  background:#fff;border:1px solid rgba(0,0,0,.08);
+  font-size:12px;font-weight:500;color:var(--ink);
+  transition:all .15s;
+}
+.sort-pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search-box{position:relative;flex:1 1 220px;max-width:300px}
+.search-in{
+  width:100%;height:36px;border-radius:999px;
+  background:#fff;border:1px solid rgba(0,0,0,.1);
+  padding:0 14px;font-size:13px;outline:none;
+}
+.search-in:focus{border-color:var(--blue)}
+
+/* Сетка карточек каталога */
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+}
+.gcard{
+  background:#f5f5f7;
+  border-radius:22px;
+  padding:20px 18px 18px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s,background .2s;
+}
+@media(hover:hover){
+  .gcard:hover{
+    background:#fff;
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.06);
+  }
+}
+.gcard-vis{
+  height:185px;display:grid;place-items:center;
+  background:#fff;border-radius:16px;padding:12px;margin-bottom:14px;
+}
+.gcard-vis .pw{height:160px;background:transparent}
+.gcard-vis .pw .pimgx{max-height:155px}
+.gcard-name{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.gcard-spec{font-size:12px;color:var(--mut);margin-top:3px}
+
+/* Цвет с подписью в каталоге */
+.gcard-col-row{margin-top:10px}
+.gcard-col-lbl{font-size:11px;color:var(--mut);margin-bottom:6px;display:block}
+.gcard-col-lbl b{color:var(--ink);font-weight:600}
+.gcard-swatches{display:flex;gap:7px;flex-wrap:wrap}
+
+/* Память в ряд в каталоге */
+.gcard-mems{
+  display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:5px;
+  margin-top:12px;
+}
+.gmem{
+  height:30px;padding:0 4px;border-radius:9px;
+  background:#fff;border:1px solid rgba(0,0,0,.08);
+  font-size:11px;font-weight:500;color:var(--mut);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  transition:all .15s;
+}
+.gmem.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
+
+.gcard-foot{
+  margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);
+}
+.gcard-price{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.gcard-price.q{font-size:13px;color:#b26a00}
+.gcard-inst{font-size:11px;color:var(--mut);margin-top:2px;min-height:15px}
+.gcard-actions{
+  display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px;
+}
+.gcard-buy{
+  height:38px;padding:0 14px;border-radius:999px;
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.gcard-buy:hover{background:var(--blue-h)}
+.gcard-more{
+  height:38px;padding:0 12px;border-radius:999px;
+  background:#fff;border:1px solid rgba(0,0,0,.1);
+  font-size:12px;font-weight:500;color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+}
+.gcard-more:hover{background:#ebebef}
+
+.cat-empty{
+  display:none;text-align:center;padding:36px 20px;
+  background:#f5f5f7;border-radius:22px;margin-top:12px;
+}
+
+/* Apple Difference Cards */
+.diff-card{
+  flex:0 0 280px;scroll-snap-align:start;
+  background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);
+  padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:215px;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;
+}
+@media(hover:hover){.diff-card:hover{transform:scale(1.015);box-shadow:var(--shadow-h)}}
+.diff-ico{font-size:30px;line-height:1;margin-bottom:14px}
+.diff-card h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.22}
+.diff-card h3 span{color:var(--blue)}
+.diff-card p{font-size:13px;color:var(--mut);margin-top:8px}
+
+/* Interactive Bento Grid (Compare, Kaspi 0-0-12, Trade-In, Branches) */
+.bento{display:grid;gap:20px;margin-top:8px}
+.bcard{
+  background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);
+  padding:28px 24px;
+}
+.bcard h3{font-size:24px;font-weight:600;letter-spacing:-.025em;margin-bottom:6px}
+.bcard .sub{font-size:14px;color:var(--mut);margin-bottom:18px}
+
+.apple-select,.apple-input{
+  width:100%;height:46px;border-radius:12px;
+  background:#f5f5f7;border:1px solid rgba(0,0,0,.1);
+  padding:0 14px;font-size:15px;color:var(--ink);outline:none;
+}
+.apple-select:focus,.apple-input:focus{background:#fff;border-color:var(--blue)}
+
+/* Compare table inside bento */
+.cmp-sel{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.cmp-vis{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center;margin-bottom:14px}
+.cmp-vis .pw{height:130px;background:#f5f5f7;border-radius:16px}
+.cmp-vis .pw .pimgx{max-height:115px}
+.cmp-vis b{display:block;font-size:14px;margin-top:8px}
+.cmp-rows{border-top:1px solid var(--line)}
+.cmp-r{display:grid;grid-template-columns:1fr 1fr;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.cmp-r span{grid-column:1/-1;font-size:11px;color:var(--mut);margin-bottom:2px}
+.cmp-r b{font-weight:600}
+.cmp-r b.win{color:var(--blue)}
+
+/* Calculator & Trade-In */
+.lbl{display:block;font-size:12px;font-weight:500;color:var(--mut);margin:12px 0 6px}
+.mo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mo-btn{
+  height:40px;border-radius:12px;background:#f5f5f7;border:1px solid rgba(0,0,0,.08);
+  font-size:14px;font-weight:600;color:var(--mut);
+}
+.mo-btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.val-box{
+  margin-top:16px;padding:16px;border-radius:16px;background:#f5f5f7;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.val-box span{font-size:13px;color:var(--mut)}
+.val-box b{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.primary-btn{
+  width:100%;height:46px;margin-top:14px;border-radius:999px;
+  background:var(--blue);color:#fff;font-size:15px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.primary-btn:hover{background:var(--blue-h)}
+
+/* Branches */
+.br-grid{display:grid;gap:16px}
+.br-card{
+  background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);
+  padding:24px;border:1.5px solid transparent;transition:border-color .2s;
+}
+.br-card.on{border-color:var(--blue)}
+.br-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.br-top b{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.br-badge{font-size:11px;font-weight:600;color:var(--blue);background:rgba(0,113,227,.1);padding:4px 10px;border-radius:999px}
+.br-addr{font-size:14px;color:var(--mut);margin-top:8px}
+.br-hrs{font-size:13px;color:var(--mut);margin-top:4px}
+.br-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.br-btn{
+  height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#f5f5f7;color:var(--ink);
+}
+.br-btn.act{background:var(--ink);color:#fff}
+.br-btn.wa{background:var(--wa);color:#fff}
+
+/* Quick Links Footer Pills */
+.qlinks{padding:24px 0 36px}
+.qlinks h3{font-size:24px;font-weight:600;letter-spacing:-.025em;margin-bottom:16px}
+.qpills{display:flex;flex-wrap:wrap;gap:10px}
+.qpill{
+  height:40px;padding:0 18px;border-radius:999px;
+  border:1px solid var(--ink);font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:background .15s,color .15s;
+}
+.qpill:hover{background:var(--ink);color:#fff}
+
+footer{
+  border-top:1px solid rgba(0,0,0,.08);
+  padding:28px 0 44px;font-size:12px;color:var(--mut);
+}
+.foot-note{max-width:860px;line-height:1.5;margin-bottom:16px}
+.foot-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;border-top:1px solid rgba(0,0,0,.06)}
+.foot-bar a{color:var(--blue)}
+
+/* Apple Buy / Configure Modal */
+dialog{
+  margin:auto;width:min(760px,calc(100% - 24px));max-height:90dvh;overflow:auto;
+  border:0;border-radius:28px;background:#fff;color:var(--ink);padding:0;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+dialog::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(6px)}
+.dlg-body{display:grid;gap:24px;padding:28px}
+.dlg-close{
+  position:sticky;top:14px;float:right;margin:14px 14px 0 0;z-index:5;
+  width:32px;height:32px;border-radius:50%;background:#e8e8ed;color:var(--mut);
+  display:grid;place-items:center;font-size:16px;font-weight:600;
+}
+.dlg-vis{background:#f5f5f7;border-radius:20px;padding:20px;display:grid;place-items:center;min-height:260px}
+.dlg-vis .pw{height:230px}
+.dlg-vis .pw .pimgx{max-height:220px}
+.dlg-kicker{font-size:12px;font-weight:600;color:#bf4800;text-transform:uppercase;letter-spacing:.04em}
+.dlg-title{font-size:28px;font-weight:600;letter-spacing:-.03em;margin-top:2px}
+.dlg-step{font-size:13px;font-weight:600;margin:16px 0 8px}
+.dlg-cols{display:flex;flex-wrap:wrap;gap:8px}
+.dcol{
+  height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(0,0,0,.14);
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;
+}
+.dcol i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+.dcol.on{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue);font-weight:600}
+.dlg-mems{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.dmem{
+  padding:12px;border-radius:14px;border:1px solid rgba(0,0,0,.14);
+  text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px;
+}
+.dmem.on{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.dmem b{font-size:14px}.dmem span{font-size:12px;color:var(--mut)}
+.dlg-specs{margin-top:16px;border-top:1px solid var(--line)}
+.dsp{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.dsp span{color:var(--mut)}.dsp b{font-weight:600}
+
+/* Mobile Dock */
+.dock{
+  position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:45;
+  display:flex;gap:8px;padding:7px;border-radius:999px;
+  background:rgba(29,29,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+}
+.dock a{
+  flex:1;height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:600;color:#fff;
+}
+.dock a.d-wa{background:var(--wa);flex:1.3}
+
+.ph{width:62px;height:116px}
+svg.ph.watch{width:68px;height:96px}
+
+@media(min-width:768px){
+  .hero-row{flex-direction:row;align-items:flex-end}
+  .scard{flex:0 0 360px;min-height:495px}
+  .diff-card{flex:0 0 310px}
+  .bento{grid-template-columns:1fr 1fr}
+  .br-grid{grid-template-columns:repeat(3,1fr)}
+  .dlg-body{grid-template-columns:1fr 1.1fr;align-items:start}
+}
+@media(max-width:1024px){
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:960px){
+  .nav-links{display:flex}
+  .dock{display:none}
+  body{padding-bottom:0}
+}
+@media(max-width:680px){
+  .wrap{width:calc(100% - 24px)}
+  .store-hero{padding:28px 0 18px}
+  .scard{flex:0 0 284px;min-height:445px;padding:22px 18px 20px}
+  .scard-media{height:185px}
+  .pw .pimgx{max-height:175px}
+  .cat-sec{padding:32px 0 36px}
+  .cat-toolbar{padding:10px;gap:8px}
+  .search-box{max-width:none;flex-basis:100%}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .gcard{padding:12px;border-radius:18px}
+  .gcard-vis{height:142px;padding:8px;margin-bottom:10px;border-radius:13px}
+  .gcard-vis .pw{height:126px}
+  .gcard-vis .pw .pimgx{max-height:122px}
+  .gcard-name{font-size:14px}
+  .gcard-spec{font-size:11px}
+  .gmem{height:28px;font-size:10px}
+  .gcard-price{font-size:15px}
+  .gcard-actions{grid-template-columns:1fr;gap:6px;margin-top:9px}
+  .gcard-buy,.gcard-more{height:35px;font-size:12px}
+  dialog{margin:auto auto 0;width:100%;border-radius:24px 24px 0 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-bar">
+    <a href="#" class="apple-logo">
+      <svg viewBox="0 0 170 170" aria-hidden="true"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.08-7.93-9.24-17.1-12.48-27.51-3.24-10.41-4.86-20.38-4.86-29.9 0-11.19 2.79-20.55 8.38-28.08 5.59-7.53 12.69-11.42 21.3-11.67 4.35 0 9.41 1.32 15.17 3.96 5.76 2.64 9.47 3.99 11.13 4.06 1.32 0 5.42-1.56 12.29-4.68 6.87-3.12 12.67-4.47 17.41-4.06 13.06 1.05 22.88 6.19 29.47 15.42-11.68 7.08-17.44 16.92-17.28 29.51.16 9.84 3.84 18.02 11.04 24.53 4.95 4.53 10.67 7.36 17.16 8.48-1.38 4.21-2.94 8.26-4.68 12.15zM119.22 31.91c0 7.73-2.83 14.95-8.48 21.65-6.82 7.98-15.07 12.59-24.02 11.86-.12-.95-.19-1.96-.19-3.03 0-7.42 3.23-15.36 8.97-21.86 2.86-3.28 6.49-6.01 10.89-8.19 4.4-2.17 8.56-3.37 12.48-3.6.23 1.07.35 2.13.35 3.17z"/></svg>
+      <span>iMarket</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#shelf-latest" data-i="nNew"></a>
+      <a href="#catalog" data-i="nCat"></a>
+      <button type="button" data-jump="mac">Mac</button>
+      <button type="button" data-jump="ipad">iPad</button>
+      <button type="button" data-jump="iphone">iPhone</button>
+      <button type="button" data-jump="watch">Watch</button>
+      <button type="button" data-jump="pods">AirPods</button>
+      <a href="#tools" data-i="nCmp"></a>
+      <a href="#stores" data-i="nBr"></a>
+    </nav>
+
+    <div class="nav-right">
+      <select class="city-pill" id="citySel" aria-label="Город">
+        <option value="astana">Астана</option>
+        <option value="oral">Уральск</option>
+        <option value="atyr">Атырау</option>
+      </select>
+      <div class="lang-pill">
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="kk">ҚАЗ</button>
+      </div>
+      <a class="nav-ico" id="hdrPhone" href="tel:+77087030101" aria-label="Позвонить">📞</a>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon">
+  <span data-i="ribbonTxt"></span>
+  <a class="js-wa-link" href="https://wa.me/77087030101" target="_blank" rel="noopener noreferrer" data-i="ribbonLink"></a>
+</div>
+
+<!-- Store Hero -->
+<section class="store-hero">
+  <div class="wrap hero-row">
+    <h1 class="store-h1"><strong data-i="heroStrong"></strong> <span data-i="heroSub"></span></h1>
+    <div class="specialist">
+      <div class="spec-item">
+        <div class="spec-av">iM</div>
+        <div>
+          <b data-i="specAsk"></b>
+          <a class="js-wa-link" href="https://wa.me/77087030101" target="_blank" rel="noopener noreferrer" data-i="specWa"></a>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-av" style="background:#e8e8ed;color:#1d1d1f">📍</div>
+        <div>
+          <b id="heroStoreTitle">iMarket · Астана</b>
+          <a href="#stores" data-i="specVisit"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Category Lineup -->
+<div class="lineup" id="lineup">
+  <button type="button" class="lu-item" data-jump="iphone">
+    <div class="lu-thumb"><img src="https://resources.cdn-kaspi.kz/img/m/p/p14/pa5/64165039.png?format=gallery-large" alt="iPhone"></div>
+    <span>iPhone</span>
+  </button>
+  <button type="button" class="lu-item" data-jump="mac">
+    <div class="lu-thumb"><img src="https://resources.cdn-kaspi.kz/img/m/p/p8e/pcc/152749595.png?format=gallery-medium" alt="Mac"></div>
+    <span>Mac</span>
+  </button>
+  <button type="button" class="lu-item" data-jump="ipad">
+    <div class="lu-thumb"><img src="https://resources.cdn-kaspi.kz/img/m/p/p23/pc7/37134129.png?format=gallery-large" alt="iPad"></div>
+    <span>iPad</span>
+  </button>
+  <button type="button" class="lu-item" data-jump="watch">
+    <div class="lu-thumb"><img src="aws11.png" onerror="this.src='https://resources.cdn-kaspi.kz/img/m/p/he4/hb2/63895429578782.jpg?format=gallery-medium'" alt="Apple Watch"></div>
+    <span>Apple Watch</span>
+  </button>
+  <button type="button" class="lu-item" data-jump="pods">
+    <div class="lu-thumb"><img src="https://resources.cdn-kaspi.kz/img/m/p/he9/h26/63785535209502.jpg?format=gallery-large" alt="AirPods"></div>
+    <span>AirPods</span>
+  </button>
+  <button type="button" class="lu-item" data-jump="acc">
+    <div class="lu-thumb"><img src="adapter.png" onerror="this.src='https://resources.cdn-kaspi.kz/img/m/p/h11/h12/63965037363230.jpg?format=gallery-large'" alt="Accessories"></div>
+    <span data-i="cAcc"></span>
+  </button>
+</div>
+
+<!-- 1. ОТДЕЛЬНЫЙ БЛОК: НОВИНКИ -->
+<section class="shelf-sec" id="shelf-latest">
+  <div class="shelf-hd">
+    <h2 class="shelf-title"><span style="color:var(--ink)" data-i="sh1A"></span> <span data-i="sh1B"></span></h2>
+    <a class="shelf-link" href="#catalog" data-i="toCatalog"></a>
+  </div>
+  <div class="rail" id="latestRail"></div>
+</section>
+
+<!-- 2. ОТДЕЛЬНЫЙ БЛОК: ПОЛНЫЙ И УДОБНЫЙ КАТАЛОГ -->
+<section class="cat-sec" id="catalog">
+  <div class="wrap">
+    <div class="cat-top">
+      <div>
+        <h2 class="shelf-title"><span style="color:var(--ink)" data-i="catA"></span> <span data-i="catB"></span></h2>
+        <p style="font-size:14px;color:var(--mut);margin-top:4px" data-i="catSub"></p>
+      </div>
+    </div>
+
+    <div class="cat-tabs" id="catTabs">
+      <button type="button" class="ctab on" data-dev="iphone">iPhone</button>
+      <button type="button" class="ctab" data-dev="mac">MacBook</button>
+      <button type="button" class="ctab" data-dev="ipad">iPad</button>
+      <button type="button" class="ctab" data-dev="watch">Apple Watch</button>
+      <button type="button" class="ctab" data-dev="pods">AirPods</button>
+      <button type="button" class="ctab" data-dev="acc" data-i="cAcc"></button>
+    </div>
+
+    <div class="cat-toolbar">
+      <div class="cat-filters" id="iphoneFilters">
+        <div class="seg" id="catSeg">
+          <button type="button" class="on" data-cat="all" data-i="fAll"></button>
+          <button type="button" data-cat="base" data-i="fBase"></button>
+          <button type="button" data-cat="pro">Pro / Pro Max</button>
+        </div>
+        <div class="seg" id="simSeg">
+          <button type="button" class="on" data-sim="0">SIM</button>
+          <button type="button" data-sim="1">eSIM</button>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:8px;flex:1 1 auto;justify-content:flex-end;flex-wrap:wrap">
+        <button type="button" class="sort-pill" id="sortBtn" data-i="fSort"></button>
+        <div class="search-box">
+          <input class="search-in" id="q" type="search" data-ph="search">
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-grid" id="grid"></div>
+    <div class="cat-empty" id="empty">
+      <b style="font-size:16px" data-i="empty"></b>
+      <p style="font-size:13px;color:var(--mut);margin:4px 0 14px" data-i="emptyS"></p>
+      <a class="buy-pill js-wa-link" href="https://wa.me/77087030101" target="_blank" rel="noopener noreferrer" data-i="ask"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ПРЕИМУЩЕСТВА iMARKET -->
+<section class="shelf-sec">
+  <div class="shelf-hd">
+    <h2 class="shelf-title"><span style="color:var(--ink)" data-i="sh2A"></span> <span data-i="sh2B"></span></h2>
+  </div>
+  <div class="rail">
+    <div class="diff-card">
+      <div class="diff-ico">💳</div>
+      <div>
+        <h3 data-i="d1T"></h3>
+        <p data-i="d1S"></p>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-ico">🏷️</div>
+      <div>
+        <h3 data-i="d2T"></h3>
+        <p data-i="d2S"></p>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-ico">🔄</div>
+      <div>
+        <h3 data-i="d3T"></h3>
+        <p data-i="d3S"></p>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-ico">🛡️</div>
+      <div>
+        <h3 data-i="d4T"></h3>
+        <p data-i="d4S"></p>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-ico">🚚</div>
+      <div>
+        <h3 data-i="d5T"></h3>
+        <p id="d5Sub"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. СРАВНЕНИЕ, КАСПИ 0-0-12 И TRADE-IN -->
+<section class="shelf-sec" id="tools">
+  <div class="wrap">
+    <div class="shelf-hd" style="padding:0">
+      <h2 class="shelf-title"><span style="color:var(--ink)" data-i="sh3A"></span> <span data-i="sh3B"></span></h2>
+    </div>
+
+    <div class="bento">
+      <div class="bcard" id="compare">
+        <h3 data-i="cmpT"></h3>
+        <p class="sub" data-i="cmpS"></p>
+        <div class="cmp-sel">
+          <select class="apple-select" id="cA"></select>
+          <select class="apple-select" id="cB"></select>
+        </div>
+        <div class="cmp-vis" id="cmpHead"></div>
+        <div class="cmp-rows" id="cmpTbl"></div>
+      </div>
+
+      <div style="display:grid;gap:20px;align-content:start">
+        <div class="bcard" id="kaspi">
+          <h3 data-i="inT"></h3>
+          <p class="sub">Kaspi Red · Kaspi Credit 0-0-12</p>
+          <label class="lbl" for="calcPrice" data-i="inSum"></label>
+          <input class="apple-input" id="calcPrice" type="number" inputmode="numeric" value="470000">
+          <label class="lbl" data-i="inTerm"></label>
+          <div class="mo-row" id="months">
+            <button type="button" class="mo-btn" data-m="3">3</button>
+            <button type="button" class="mo-btn" data-m="6">6</button>
+            <button type="button" class="mo-btn on" data-m="12">12</button>
+          </div>
+          <div class="val-box">
+            <span data-i="inPay"></span>
+            <b id="calcResult"></b>
+          </div>
+          <button type="button" class="primary-btn" id="askInst" data-i="inBtn"></button>
+        </div>
+
+        <div class="bcard ti-only" id="tradein">
+          <h3 data-i="trT"></h3>
+          <p class="sub" data-i="trS"></p>
+          <form id="trForm">
+            <label class="lbl" data-i="trModel"></label>
+            <select class="apple-select" id="trM"></select>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div>
+                <label class="lbl" data-i="trBat"></label>
+                <select class="apple-select" id="trB">
+                  <option value="1">90–100%</option>
+                  <option value=".92">80–89%</option>
+                  <option value=".8">&lt; 80%</option>
+                </select>
+              </div>
+              <div>
+                <label class="lbl" data-i="trCond"></label>
+                <select class="apple-select" id="trC"></select>
+              </div>
+            </div>
+            <div class="val-box">
+              <span data-i="trRes"></span>
+              <b id="trOut"></b>
+            </div>
+            <button type="submit" class="primary-btn" data-i="trBtn"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. МАГАЗИНЫ / ФИЛИАЛЫ -->
+<section class="shelf-sec" id="stores">
+  <div class="wrap">
+    <div class="shelf-hd" style="padding:0">
+      <h2 class="shelf-title"><span style="color:var(--ink)" data-i="brT"></span> <span data-i="brS"></span></h2>
+    </div>
+    <div class="br-grid" id="brList"></div>
+  </div>
+</section>
+
+<!-- Quick Links -->
+<section class="qlinks">
+  <div class="wrap">
+    <h3 data-i="qlTitle"></h3>
+    <div class="qpills">
+      <a class="qpill js-wa-link" href="https://wa.me/77087030101" target="_blank" rel="noopener noreferrer" data-i="ql1"></a>
+      <a class="qpill" href="#kaspi" data-i="ql2"></a>
+      <a class="qpill ti-only" href="#tradein" data-i="ql3"></a>
+      <a class="qpill" id="qlMap" href="https://go.2gis.com/LWVOI" target="_blank" rel="noopener noreferrer" data-i="open2gis"></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-note" data-i="pmFoot"></p>
+    <div class="foot-bar">
+      <span>Copyright © 2026 iMarket · Premium Reseller since 2021 · 463+ отзывов 5.0 ★ в 2GIS</span>
+      <a href="https://wa.me/77474941621?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer" data-i="buySite"></a>
+    </div>
+  </div>
+</footer>
+
+<nav class="dock">
+  <a id="dockPhone" href="tel:+77087030101" data-i="call"></a>
+  <a class="d-wa js-wa-link" href="https://wa.me/77087030101" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+</nav>
+
+<dialog id="dlg"></dialog>
+
+<script>
+const CITIES = {
+  astana: {
+    k: 'astana',
+    wa: '77087030101',
+    phoneFmt: '+7 (708) 703-0101',
+    addrRu: 'ул. Бухар Жырау, 26, Есиль район, Астана',
+    addrKk: 'Бұхар жырау к-сі, 26, Есіл ауданы, Астана',
+    hrsRu: 'Ежедневно, 10:00–20:00',
+    hrsKk: 'Күн сайын, 10:00–20:00',
+    delivRu: 'Экспресс-доставка по Астане за 2 часа.',
+    delivKk: 'Астана бойынша 2 сағатта экспресс-жеткізу.',
+    mapUrl: 'https://go.2gis.com/LWVOI',
+    tradein: true,
+    csv: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSHE-Imq7ZklT3HdLa5MZeKPblEDvHZgaKAxtBRxf2IT9J1uGOvzFo7VEHaeCd_L2A-5B951Rdy_z6t/pub?gid=1991692057&single=true&output=csv'
+  },
+  oral: {
+    k: 'oral',
+    wa: '77718450707',
+    phoneFmt: '+7 (771) 845-0707',
+    addrRu: 'пр. Абая, 88, Уральск (Орал)',
+    addrKk: 'Абай даңғылы, 88, Орал',
+    hrsRu: 'Ежедневно, 10:00–20:00',
+    hrsKk: 'Күн сайын, 10:00–20:00',
+    delivRu: 'Быстрая доставка по Уральску за 2 часа.',
+    delivKk: 'Орал бойынша 2 сағатта жылдам жеткізу.',
+    mapUrl: 'https://2gis.kz/uralsk',
+    tradein: false,
+    csv: 'prices-oral.csv'
+  },
+  atyr: {
+    k: 'atyr',
+    wa: '77078450606',
+    phoneFmt: '+7 (707) 845-0606',
+    addrRu: 'ул. Кулманова, 105а, Атырау',
+    addrKk: 'Құлманов к-сі, 105а, Атырау',
+    hrsRu: 'Ежедневно, 10:00–20:00',
+    hrsKk: 'Күн сайын, 10:00–20:00',
+    delivRu: 'Быстрая доставка по Атырау за 2 часа.',
+    delivKk: 'Атырау бойынша 2 сағатта жылдам жеткізу.',
+    mapUrl: 'https://2gis.kz/atyrau',
+    tradein: false,
+    csv: 'prices-atyrau.csv'
+  }
+};
+
+/* [Название RU, Название KK, HEX] */
+const CL = {
+  bk: ['Black', 'Black', '#232426'],
+  wh: ['White', 'White', '#f2f2f4'],
+  bl: ['Blue', 'Blue', '#7fa8cf'],
+  pk: ['Pink', 'Pink', '#f4c6ce'],
+  lv: ['Lavender', 'Lavender', '#c5b4e3'],
+  yl: ['Yellow', 'Yellow', '#f3e39c'],
+  gr: ['Green', 'Green', '#b8d2be'],
+  ul: ['Ultramarine', 'Ultramarine', '#5c76e8'],
+  tl: ['Teal', 'Teal', '#6cb8b4'],
+  nv: ['Blue', 'Blue', '#2e446b'],
+  or: ['Orange', 'Orange', '#e07838'],
+  sl: ['Silver', 'Silver', '#d8d9dd'],
+  sg: ['Space Gray', 'Space Gray', '#4a4c50'],
+  gd: ['Gold', 'Gold', '#e2cdb0'],
+  st: ['Starlight', 'Starlight', '#e8dfd5'],
+  md: ['Midnight', 'Midnight', '#232833'],
+  nt: ['Natural Titanium', 'Natural Titanium', '#b6b1a9'],
+  bg: ['Burgundy', 'Burgundy', '#5d1d29']
+};
+
+const KASPI = 'https://resources.cdn-kaspi.kz/img/m/p/';
+const SULPAK = 'https://object.pscloud.io/cms/cms/Photo/';
+const IMG_18_BG = 'https://api.technodom.kz/f3/api/v1/images/302623_1.jpg';
+const IMG_18_BL = 'https://api.technodom.kz/f3/api/v1/images/800/800/302624_1.jpg';
+const IMG_18_WH = 'https://api.technodom.kz/f3/api/v1/images/302606_1.jpg';
+const IMG_18_BK = 'https://api.technodom.kz/f3/api/v1/images/800/800/302621_1.jpg';
+
+const BASE_P = [
+  {
+    id: 'i18pm', f: 'i18pm.png', url: IMG_18_BG, dark: true, kicker: 'NEW', featured: true,
+    g: 'pro', n: 'iPhone 18 Pro Max', disp: 6.9, chip: 'A20 Pro', cam: '48 MP Fusion', hz: 120, mat: 'al', bat: 5567,
+    cols: ['bg', 'bl', 'wh', 'bk'],
+    colorImages: {
+      bg: IMG_18_BG,
+      bl: IMG_18_BL,
+      wh: IMG_18_WH,
+      bk: IMG_18_BK
+    },
+    o: [['256GB', 770000, 745000], ['512GB', 880000, 850000], ['1TB', 1150000, 1100000], ['2TB', 1430000, 1320000]]
+  },
+  {
+    id: 'i18p', f: 'i18p.png', url: IMG_18_BG, dark: true, kicker: 'NEW', featured: true,
+    g: 'pro', n: 'iPhone 18 Pro', disp: 6.3, chip: 'A20 Pro', cam: '48 MP Fusion', hz: 120, mat: 'al', bat: 4288,
+    cols: ['bg', 'bl', 'wh', 'bk'],
+    colorImages: {
+      bg: IMG_18_BG,
+      bl: IMG_18_BL,
+      wh: IMG_18_WH,
+      bk: IMG_18_BK
+    },
+    o: [['256GB', 670000, 650000], ['512GB', 800000, 760000], ['1TB', 1040000, 950000], ['2TB', 1320000, null]]
+  },
+  {
+    id: 'i17pm', f: 'i17pm.png', url: KASPI + 'pd9/pf2/64169612.png?format=gallery-medium', featured: true,
+    g: 'pro', n: 'iPhone 17 Pro Max', disp: 6.9, chip: 'A19 Pro', cam: '48 MP × 3', hz: 120, mat: 'al', bat: 5088,
+    cols: ['sl', 'nv', 'or'],
+    colorImages: {
+      sl: KASPI + 'p8e/p55/64169949.png?format=gallery-large',
+      nv: KASPI + 'pd9/pf2/64169612.png?format=gallery-medium',
+      or: KASPI + 'p41/p88/64170091.png?format=gallery-large'
+    },
+    o: [['256GB', 650000, 610000], ['512GB', 770000, 700000], ['1TB', 855000, 785000], ['2TB', 990000, 900000]]
+  },
+  {
+    id: 'i17p', f: 'i17p.png', url: KASPI + 'pb3/p40/64168003.png?format=gallery-medium',
+    g: 'pro', n: 'iPhone 17 Pro', disp: 6.3, chip: 'A19 Pro', cam: '48 MP × 3', hz: 120, mat: 'al', bat: 4252,
+    cols: ['sl', 'nv', 'or'],
+    colorImages: {
+      sl: KASPI + 'pb3/p40/64168003.png?format=gallery-medium',
+      nv: KASPI + 'p85/p81/64167660.png?format=gallery-large',
+      or: KASPI + 'p41/p88/64170091.png?format=gallery-large'
+    },
+    o: [['256GB', 610000, 565000], ['512GB', 710000, 670000], ['1TB', 810000, 750000]]
+  },
+  {
+    id: 'i17', f: 'i17.png', url: KASPI + 'p14/pa5/64165039.png?format=gallery-large', featured: true,
+    g: 'base', n: 'iPhone 17', disp: 6.3, chip: 'A19', cam: '48 + 48 MP', hz: 120, mat: 'al', bat: 3692,
+    cols: ['bk', 'wh', 'bl', 'gr', 'lv'],
+    colorImages: {
+      bk: KASPI + 'p14/pa5/64165039.png?format=gallery-large',
+      wh: SULPAK + 'img_0_77_7209_0_1_n9reJf.webp',
+      bl: KASPI + 'p2b/pa6/64164567.png?format=gallery-medium',
+      gr: SULPAK + 'img_0_77_7212_0_1_vlTHJP.webp',
+      lv: SULPAK + 'img_0_77_7211_0_1_LnSZIh.jpg'
+    },
+    o: [['256GB', 470000, 460000], ['512GB', null, null]]
+  },
+  {
+    id: 'i16', f: 'i16.png', url: KASPI + 'hf3/h65/87295470731294.png?format=gallery-large',
+    g: 'base', n: 'iPhone 16', disp: 6.1, chip: 'A18', cam: '48 + 12 MP', hz: 60, mat: 'al', bat: 3561,
+    cols: ['bk', 'wh', 'ul', 'tl', 'pk'],
+    colorImages: {
+      bk: KASPI + 'hf3/h65/87295470731294.png?format=gallery-large',
+      wh: SULPAK + 'img_0_77_6099_0_1_yB8p0m.webp',
+      ul: KASPI + 'hff/h64/87295472042014.png?format=gallery-large',
+      tl: KASPI + 'h32/h53/87295472402462.png?format=gallery-large',
+      pk: SULPAK + 'img_0_77_6568_0_1_DUmssk.webp'
+    },
+    o: [['128GB', 390000, null], ['256GB', 460000, null], ['512GB', null, null]]
+  },
+  {
+    id: 'i15', f: 'i15.png', url: KASPI + 'h1d/hfc/86303745998878.jpg?format=gallery-large',
+    g: 'base', n: 'iPhone 15', disp: 6.1, chip: 'A16 Bionic', cam: '48 + 12 MP', hz: 60, mat: 'al', bat: 3349,
+    cols: ['bk', 'bl', 'pk', 'yl', 'gr'],
+    colorImages: {
+      bk: KASPI + 'h1d/hfc/86303745998878.jpg?format=gallery-large',
+      bl: KASPI + 'h01/h5f/86303746293790.jpg?format=gallery-large',
+      pk: KASPI + 'h81/h37/86303335186462.jpg?format=gallery-large',
+      yl: KASPI + 'h7a/h3f/86303338397726.jpg?format=gallery-large',
+      gr: KASPI + 'h60/h8b/86303348686878.jpg?format=gallery-large'
+    },
+    o: [['128GB', 340000, null], ['256GB', 400000, null], ['512GB', null, null]]
+  }
+];
+
+/* Apple Watch — локальные файлы aws11.png, awse3.png, awu3.png из корня папки */
+const WATCH_ITEMS = [
+  {id: 'aws11', f: 'aws11.png', url: KASPI + 'he4/hb2/63895429578782.jpg?format=gallery-medium', g: 'watch', n: 'Apple Watch Series 11', d: '42 / 46 мм', o: [['42 mm', null, null], ['46 mm', null, null]]},
+  {id: 'awse3', f: 'awse3.png', url: KASPI + 'he4/hb2/63895429578782.jpg?format=gallery-medium', g: 'watch', n: 'Apple Watch SE 3', d: '40 / 44 мм', o: [['40 mm', null, null], ['44 mm', null, null]]},
+  {id: 'awu3', f: 'awu3.png', url: KASPI + 'he4/hb2/63895429578782.jpg?format=gallery-medium', g: 'watch', n: 'Apple Watch Ultra 3', d: '49 мм · титан', o: [['49 mm', null, null]]}
+];
+
+const BASE_DEV = [
+  {id: 'mba13', f: 'mba13.jpg', url: KASPI + 'p8e/pcc/152749595.png?format=gallery-medium', g: 'mac', n: 'MacBook Air 13" M5', d: '13" · чип M5', cols: ['md', 'st', 'sl', 'sg'], colorImages: {}, o: [['256GB', null, null], ['512GB', null, null], ['1TB', null, null]]},
+  {id: 'mba15', f: 'mba15.png', url: KASPI + 'p8e/pcc/152749595.png?format=gallery-medium', g: 'mac', n: 'MacBook Air 15" M5', d: '15" · чип M5', cols: ['md', 'st', 'sl', 'sg'], colorImages: {}, o: [['256GB', null, null], ['512GB', null, null], ['1TB', null, null]]},
+  {id: 'mbneo', f: 'mbneo.png', url: KASPI + 'p8e/pcc/152749595.png?format=gallery-medium', g: 'mac', n: 'MacBook Neo', d: '13"', cols: ['sl', 'sg'], colorImages: {}, o: [['256GB', null, null], ['512GB', null, null]]},
+  {id: 'mbp14', f: 'mbp14.png', url: KASPI + 'h88/h18/64372891975710.jpg?format=gallery-medium', g: 'mac', n: 'MacBook Pro 14" M5', d: '14" · чип M5', cols: ['bk', 'sl'], colorImages: {}, o: [['512GB', null, null], ['1TB', null, null], ['2TB', null, null]]},
+  {id: 'ipad11', f: 'ipad11.png', url: KASPI + 'p23/pc7/37134129.png?format=gallery-large', g: 'ipad', n: 'iPad 11" (A16)', d: '11" · чип A16', cols: ['sl', 'bl', 'pk', 'yl'], colorImages: {}, o: [['128GB', null, null], ['256GB', null, null], ['512GB', null, null]]},
+  {id: 'ipadair', f: 'ipadair.png', url: KASPI + 'p23/pc7/37134129.png?format=gallery-large', g: 'ipad', n: 'iPad Air 11" M4', d: '11" · чип M4', cols: ['sg', 'st', 'bl'], colorImages: {}, o: [['128GB', null, null], ['256GB', null, null], ['512GB', null, null], ['1TB', null, null]]},
+  {id: 'ipadpro', f: 'ipadpro.png', url: KASPI + 'hac/h79/86056599322654.jpg?format=gallery-large', g: 'ipad', n: 'iPad Pro 11" M5', d: '11" · чип M5', cols: ['bk', 'sl'], colorImages: {}, o: [['256GB', null, null], ['512GB', null, null], ['1TB', null, null], ['2TB', null, null]]},
+  ...WATCH_ITEMS,
+  {id: 'app3', f: 'app3.png', url: KASPI + 'he9/h26/63785535209502.jpg?format=gallery-large', g: 'pods', n: 'AirPods Pro 3', d: 'Шумоподавление', cols: ['wh'], colorImages: {}, o: [['USB-C', null, null]]},
+  {id: 'ap4', f: 'ap4.png', url: KASPI + 'he9/h26/63785535209502.jpg?format=gallery-large', g: 'pods', n: 'AirPods 4', d: 'Новое поколение', cols: ['wh'], colorImages: {}, o: [['USB-C', null, null]]},
+  {id: 'apmax', f: 'apmax.png', url: KASPI + 'h97/h0d/64141045628958.jpg?format=gallery-large', g: 'pods', n: 'AirPods Max', d: 'Накладные', cols: ['md', 'st', 'bl'], colorImages: {}, o: [['USB-C', null, null]]}
+];
+
+/* Блок питания (Адаптер 20W) — локальный файл adapter.png из корня папки */
+const BASE_ACC = [{id: 'ad20', f: 'adapter.png', url: KASPI + 'h11/h12/63965037363230.jpg?format=gallery-large', n: 'Адаптер 20W', nk: 'adName', dk: 'adDesc', o: [['20W', null, null]]}];
+
+let P = [], DEV = [], ACC = [], ADJ = 0;
+function resetCatalogData() {
+  P = JSON.parse(JSON.stringify(BASE_P));
+  DEV = JSON.parse(JSON.stringify(BASE_DEV));
+  ACC = JSON.parse(JSON.stringify(BASE_ACC));
+  ADJ = 0;
+}
+resetCatalogData();
+
+const TI = [['iPhone 11', 100000], ['iPhone 12', 140000], ['iPhone 13', 190000], ['iPhone 14', 240000], ['iPhone 15', 320000], ['iPhone 16', 420000]];
+const TIC = [1, .9, .75];
+
+const T = {
+  ru: {
+    nNew: 'Новинки', nCat: 'Каталог', nCmp: 'Сравнение', nBr: 'Магазины', cAcc: 'Аксессуары',
+    ribbonTxt: 'Рассрочка 0-0-12 через Kaspi и верификация на все устройства.', ribbonLink: 'Уточнить в WhatsApp ›',
+    heroStrong: 'Магазин.', heroSub: 'Лучший способ купить любимые продукты Apple.',
+    specAsk: 'Нужна помощь с выбором?', specWa: 'Написать специалисту ›', specVisit: 'Посетить iMarket ›',
+    sh1A: 'Все новинки.', sh1B: 'Посмотрите, что нового прямо сейчас.', toCatalog: 'Весь каталог ↓',
+    catA: 'Весь каталог.', catB: 'Выберите модель, память и цвет.', catSub: 'Актуальные цены и наличие обновляются автоматически.',
+    sh2A: 'Преимущества iMarket.', sh2B: 'Ещё больше причин покупать у нас.',
+    sh3A: 'Помощь с выбором.', sh3B: 'Сравните модели или рассчитайте платеж.',
+    d1T: 'Рассрочка <span>0-0-12</span> без переплат.', d1S: 'Оформление Kaspi Red и Kaspi Credit за 2 минуты.',
+    d2T: 'Нашли дешевле — <span>сделаем ещё дешевле*</span>.', d2S: 'Гарантия лучшей цены среди официальных реселлеров.',
+    d3T: 'Обменяйте смартфон по <span>Trade-In</span>.', d3S: 'Оценка старого iPhone за 5 минут в Астане.',
+    d4T: '<span>1 год гарантии</span> и верификация.', d4S: 'Бесплатный перенос данных и настройка при покупке.',
+    d5T: '<span>Быстрая доставка</span> до двери.',
+    fAll: 'Все', fBase: 'Базовые', fSort: 'По цене ↑', search: 'Поиск по каталогу...',
+    colLbl: 'Цвет:', buy: 'Купить', more: 'Подробнее', onreq: 'По запросу', soonP: 'Скоро', from: 'от ', mo: '/мес.',
+    empty: 'Ничего не нашлось', emptyS: 'Попробуйте изменить фильтр или спросите наличие в WhatsApp.', ask: 'Уточнить в WhatsApp',
+    cmpT: 'Сравнить модели', cmpS: 'Выберите два iPhone для наглядного сравнения.',
+    spDisp: 'Дисплей', spChip: 'Чип', spCam: 'Камера', spHz: 'Частота', spMat: 'Корпус', spBat: 'Батарея', spMem: 'Память', spPrice: 'Цена', al: 'Алюминий',
+    inT: 'Калькулятор 0-0-12', inSum: 'Стоимость, ₸', inTerm: 'Срок, мес.', inPay: 'Ежемесячный платёж', inBtn: 'Оформить в WhatsApp',
+    trT: 'Apple Trade-In', trS: 'Узнайте ориентировочную скидку на новый iPhone.', trModel: 'Ваша модель', trBat: 'Батарея', trCond: 'Состояние',
+    c: ['Идеальное', 'Есть царапины', 'Трещины / ремонт'], trRes: 'Оценка скидки', trBtn: 'Оценить в WhatsApp',
+    brT: 'Наши магазины.', brS: 'Выберите ваш город.',
+    astana: 'Астана', oral: 'Уральск (Орал)', atyr: 'Атырау', main: 'Флагман', selectCity: 'Выбрать город', selectedCity: 'Выбрано',
+    qlTitle: 'Быстрые ссылки', ql1: 'Наличие в WhatsApp', ql2: 'Рассрочка 0-0-12', ql3: 'Trade-In оценка', open2gis: 'Открыть в 2GIS',
+    call: 'Позвонить', buySite: 'Хотите такой же сайт? Написать разработчику',
+    pmFoot: '* Гарантия лучшей цены действует при наличии аналогичного нового товара в официальном магазине-реселлере. Все смартфоны оригинальные, запечатанные и прошли государственную верификацию.',
+    adName: 'Адаптер 20W', adDesc: 'Оригинал · Гарантия 1 год',
+    stepCol: 'Цвет. Выберите оттенок:', stepMem: 'Память. Выберите объём:', stepNet: 'Версия связи:'
+  },
+  kk: {
+    nNew: 'Жаңалықтар', nCat: 'Каталог', nCmp: 'Салыстыру', nBr: 'Дүкендер', cAcc: 'Аксессуарлар',
+    ribbonTxt: 'Kaspi арқылы 0-0-12 бөліп төлеу және барлық құрылғыларға верификация.', ribbonLink: 'WhatsApp-та сұрау ›',
+    heroStrong: 'Дүкен.', heroSub: 'Сүйікті Apple өнімдерін сатып алудың ең тиімді жолы.',
+    specAsk: 'Таңдауға көмек керек пе?', specWa: 'Маманға жазу ›', specVisit: 'iMarket-ке келу ›',
+    sh1A: 'Барлық жаңалықтар.', sh1B: 'Қазір қолжетімді жаңа модельдерді көріңіз.', toCatalog: 'Барлық каталог ↓',
+    catA: 'Барлық каталог.', catB: 'Модель, жад және түсті таңдаңыз.', catSub: 'Бағалар мен қолжетімділік автоматты түрде жаңарады.',
+    sh2A: 'iMarket артықшылықтары.', sh2B: 'Бізден сатып алудың басты себептері.',
+    sh3A: 'Таңдауға көмек.', sh3B: 'Модельдерді салыстырыңыз немесе төлемді есептеңіз.',
+    d1T: 'Артық төлемсіз <span>0-0-12</span> бөліп төлеу.', d1S: 'Kaspi Red және Kaspi Credit 2 минутта рәсімделеді.',
+    d2T: 'Арзанырақ тапсаңыз — <span>тағы арзандатамыз*</span>.', d2S: 'Ресми реселлерлер арасындағы ең үздік баға кепілдігі.',
+    d3T: '<span>Trade-In</span> арқылы жаңартыңыз.', d3S: 'Ескі iPhone-ды Астанада 5 минутта бағалаймыз.',
+    d4T: '<span>1 жыл кепілдік</span> және верификация.', d4S: 'Сатып алу кезінде деректерді тегін көшіру.',
+    d5T: 'Есікке дейін <span>жылдам жеткізу</span>.',
+    fAll: 'Барлығы', fBase: 'Базалық', fSort: 'Бағасы ↑', search: 'Каталогтан іздеу...',
+    colLbl: 'Түс:', buy: 'Сатып алу', more: 'Толығырақ', onreq: 'Сұраныс бойынша', soonP: 'Жақында', from: 'бастап ', mo: '/ай',
+    empty: 'Ештеңе табылмады', emptyS: 'Сүзгіні өзгертіңіз немесе WhatsApp-та сұраңыз.', ask: 'WhatsApp-та нақтылау',
+    cmpT: 'Модельдерді салыстыру', cmpS: 'Салыстыру үшін екі iPhone таңдаңыз.',
+    spDisp: 'Дисплей', spChip: 'Чип', spCam: 'Камера', spHz: 'Жиілік', spMat: 'Корпус', spBat: 'Батарея', spMem: 'Жад', spPrice: 'Баға', al: 'Алюминий',
+    inT: '0-0-12 калькуляторы', inSum: 'Құны, ₸', inTerm: 'Мерзімі, ай', inPay: 'Айлық төлем', inBtn: 'WhatsApp-та рәсімдеу',
+    trT: 'Apple Trade-In', trS: 'Жаңа iPhone-ға шамамен жеңілдікті біліңіз.', trModel: 'Сіздің модель', trBat: 'Батарея', trCond: 'Жағдайы',
+    c: ['Мінсіз', 'Сызаттар бар', 'Жарық / жөндеу'], trRes: 'Бағалау сомасы', trBtn: 'WhatsApp-та бағалау',
+    brT: 'Біздің дүкендер.', brS: 'Қалаңызды таңдаңыз.',
+    astana: 'Астана', oral: 'Орал', atyr: 'Атырау', main: 'Басты дүкен', selectCity: 'Қаланы таңдау', selectedCity: 'Таңдалды',
+    qlTitle: 'Жылдам сілтемелер', ql1: 'WhatsApp-та нақтылау', ql2: 'Бөліп төлеу 0-0-12', ql3: 'Trade-In бағалау', open2gis: '2GIS-те ашу',
+    call: 'Қоңырау шалу', buySite: 'Осындай сайт керек пе? Әзірлеушіге жазу',
+    pmFoot: '* Үздік баға кепілдігі ресми дүкен-реселлерде дәл сондай жаңа тауар болған жағдайда әрекет етеді.',
+    adName: '20W адаптері', adDesc: 'Түпнұсқа · 1 жыл кепілдік',
+    stepCol: 'Түс. Реңкті таңдаңыз:', stepMem: 'Жад. Көлемін таңдаңыз:', stepNet: 'Байланыс нұсқасы:'
+  }
+};
+
+let L = 'ru';
+try { L = localStorage.getItem('lang') === 'kk' ? 'kk' : 'ru'; } catch (e) {}
+
+let CITY = 'astana';
+try {
+  const uCity = new URLSearchParams(location.search).get('city');
+  const sCity = localStorage.getItem('city');
+  if (uCity && CITIES[uCity]) CITY = uCity;
+  else if (sCity && CITIES[sCity]) CITY = sCity;
+} catch (e) {}
+
+const curCity = () => CITIES[CITY] || CITIES.astana;
+const t = k => T[L][k] ?? T.ru[k] ?? k;
+const $ = id => document.getElementById(id);
+const fmt = n => n.toLocaleString('ru-RU').replace(/\u00a0/g, ' ') + ' ₸';
+const wa = (n, txt) => window.open('https://wa.me/' + String(n).replace(/\D/g, '') + '?text=' + encodeURIComponent(String(txt).slice(0, 500)), '_blank', 'noopener,noreferrer');
+
+const sel = {};
+const selCol = {};
+[...BASE_P, ...BASE_DEV, ...BASE_ACC].forEach(p => { sel[p.id] = 0; selCol[p.id] = 0; });
+
+const F = { cat: 'all', q: '', asc: false, esim: 0, dev: 'iphone' };
+let months = 12;
+
+const srcs = p => {
+  const colIdx = selCol[p.id] || 0;
+  const colKey = p.cols && p.cols[colIdx];
+  const explicit = (colKey && p.colorImages && p.colorImages[colKey]) || (p.imgs && p.imgs[colIdx]);
+  const localFile = p.f || `${p.id}.png`;
+  const isWatchOrAcc = p.g === 'watch' || p.id === 'ad20';
+  return [...new Set([
+    isWatchOrAcc ? localFile : null,
+    explicit,
+    p.url,
+    colKey ? `img/${p.id}-${colKey}.png` : null,
+    `img/${localFile}`,
+    localFile
+  ].filter(Boolean))];
+};
+
+const pic = (p, eager = false) => {
+  const sList = srcs(p);
+  return `<span class="pw"><img class="pimgx" ${eager ? '' : 'loading="lazy"'} src="${sList[0]}" alt="${p.n}" onerror="fb(this,'${p.id}')"></span>`;
+};
+
+function fb(el, id) {
+  const p = [...P, ...DEV, ...ACC].find(x => x.id === id);
+  const n = (+el.dataset.n || 0) + 1;
+  const l = srcs(p);
+  if (n < l.length) { el.dataset.n = n; el.src = l[n]; return; }
+  const w = el.closest('.pw');
+  if (w) w.innerHTML = p && p.g === 'watch'
+    ? `<svg class="ph watch" viewBox="0 0 80 120"><rect x="24" y="2" width="32" height="22" rx="6" fill="#d1d1d6"/><rect x="24" y="96" width="32" height="22" rx="6" fill="#d1d1d6"/><rect x="14" y="22" width="52" height="76" rx="16" fill="#2b2d32"/></svg>`
+    : `<svg class="ph" viewBox="0 0 70 140"><rect x="3" y="2" width="64" height="136" rx="14" fill="#2b2d32"/></svg>`;
+}
+
+const price = (p, i) => {
+  const v = p.o[i][(F.esim && (p.g === 'base' || p.g === 'pro')) ? 2 : 1];
+  return v > 0 ? v + ADJ : v;
+};
+const pTxt = (p, i) => {
+  const v = price(p, i);
+  return v > 0 ? fmt(v) : v === -1 ? t('soonP') : t('onreq');
+};
+const iTxt = (p, i) => price(p, i) > 0 ? t('from') + fmt(Math.round(price(p, i) / 12)) + t('mo') : '';
+const colName = ck => { const c = CL[ck]; return c ? (L === 'kk' ? c[1] : c[0]) : ''; };
+const colHex = ck => CL[ck] ? CL[ck][2] : '#ccc';
+
+function renderSwatches(p) {
+  if (!p.cols || p.cols.length <= 1) return '<div class="swatches"></div>';
+  const curIdx = selCol[p.id] || 0;
+  return `<div class="swatches">${p.cols.map((ck, idx) =>
+    `<button type="button" class="sw${idx === curIdx ? ' on' : ''}" style="background:${colHex(ck)}" title="${colName(ck)}" aria-label="${colName(ck)}" data-colp="${p.id}" data-coli="${idx}"></button>`
+  ).join('')}</div>`;
+}
+
+/* 1. Рендер витрины НОВИНОК */
+function renderLatest() {
+  const latest = P.filter(p => p.featured);
+  $('latestRail').innerHTML = latest.map(p => {
+    const i = sel[p.id] || 0;
+    return `<article class="scard${p.dark ? ' dark' : ''}">
+      <div>
+        <div class="scard-kicker">${p.kicker || 'PRO'}</div>
+        <h3 class="scard-title">${p.n}</h3>
+        <div class="scard-sub">${p.disp}" · ${p.chip}</div>
+      </div>
+      <div class="scard-media" id="limg-${p.id}">${pic(p, true)}</div>
+      <div>
+        ${renderSwatches(p)}
+        <div class="card-mems">${p.o.map((o, idx) =>
+          `<button type="button" class="cmem${idx === i ? ' on' : ''}" data-p="${p.id}" data-i="${idx}">${o[0]}</button>`
+        ).join('')}</div>
+        <div class="scard-foot">
+          <div>
+            <div class="scard-price" id="lpr-${p.id}">${pTxt(p, i)}</div>
+            <div class="scard-inst" id="lin-${p.id}">${iTxt(p, i)}</div>
+          </div>
+          <button type="button" class="buy-pill" data-open="${p.id}">${t('buy')}</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+/* 2. Рендер ПОЛНОГО КАТАЛОГА */
+function renderGrid() {
+  $('iphoneFilters').style.display = F.dev === 'iphone' ? 'flex' : 'none';
+  document.querySelectorAll('#catTabs .ctab').forEach(b => b.classList.toggle('on', b.dataset.dev === F.dev));
+
+  if (F.dev === 'acc') {
+    $('empty').style.display = 'none';
+    $('grid').innerHTML = ACC.map(a => {
+      const v = a.o[0][1];
+      return `<article class="gcard">
+        <div>
+          <div class="gcard-vis" id="pimg-${a.id}">${pic(a)}</div>
+          <h3 class="gcard-name">${t(a.nk)}</h3>
+          <div class="gcard-spec">${t(a.dk)}</div>
+        </div>
+        <div class="gcard-foot">
+          <div class="gcard-price${v > 0 ? '' : ' q'}">${v > 0 ? fmt(v + ADJ) : t('onreq')}</div>
+          <div class="gcard-actions" style="grid-template-columns:1fr">
+            <button type="button" class="gcard-buy" data-acc="${a.id}">${t('buy')}</button>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+    return;
+  }
+
+  const pool = F.dev === 'iphone' ? P : DEV.filter(x => x.g === F.dev);
+  let list = pool.filter(p => (F.dev !== 'iphone' || F.cat === 'all' || p.g === F.cat) && p.n.toLowerCase().includes(F.q));
+  if (F.asc) list = [...list].sort((a, b) => (price(a, 0) > 0 ? price(a, 0) : 1e12) - (price(b, 0) > 0 ? price(b, 0) : 1e12));
+
+  $('empty').style.display = list.length ? 'none' : 'block';
+
+  $('grid').innerHTML = list.map(p => {
+    const i = sel[p.id] || 0;
+    const cIdx = selCol[p.id] || 0;
+    const hasCols = p.cols && p.cols.length > 0;
+    const isWatch = p.g === 'watch';
+    return `<article class="gcard">
+      <div>
+        <div class="gcard-vis" id="pimg-${p.id}">${pic(p)}</div>
+        <h3 class="gcard-name">${p.n}</h3>
+        <div class="gcard-spec">${p.d || p.disp + '" · ' + p.chip}</div>
+
+        <div class="gcard-mems">${p.o.map((o, idx) =>
+          `<button type="button" class="gmem${idx === i ? ' on' : ''}" data-p="${p.id}" data-i="${idx}">${o[0]}</button>`
+        ).join('')}</div>
+
+        ${hasCols ? `
+          <div class="gcard-col-row">
+            <span class="gcard-col-lbl">${t('colLbl')} <b id="clbl-${p.id}">${colName(p.cols[cIdx])}</b></span>
+            <div class="gcard-swatches">${p.cols.map((ck, idx) =>
+              `<button type="button" class="sw${idx === cIdx ? ' on' : ''}" style="background:${colHex(ck)}" title="${colName(ck)}" aria-label="${colName(ck)}" data-colp="${p.id}" data-coli="${idx}"></button>`
+            ).join('')}</div>
+          </div>
+        ` : ''}
+      </div>
+
+      <div class="gcard-foot">
+        <div class="gcard-price${price(p, i) > 0 ? '' : ' q'}" id="pr-${p.id}">${pTxt(p, i)}</div>
+        <div class="gcard-inst" id="in-${p.id}">${iTxt(p, i)}</div>
+        <div class="gcard-actions"${!p.disp ? ' style="grid-template-columns:1fr"' : ''}>
+          <button type="button" class="gcard-buy" ${isWatch ? `data-watch="${p.id}"` : `data-order="${p.id}"`}>${t('buy')}</button>
+          ${p.disp ? `<button type="button" class="gcard-more" data-open="${p.id}">${t('more')}</button>` : ''}
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function specs(p) {
+  return [
+    [t('spDisp'), p.disp + '"', p.disp],
+    [t('spChip'), p.chip],
+    [t('spCam'), p.cam],
+    [t('spHz'), p.hz + ' Hz', p.hz],
+    [t('spMat'), t(p.mat)],
+    [t('spBat'), p.bat ? p.bat.toLocaleString('ru-RU').replace(/\u00a0/g, ' ') + ' mAh' : '—', p.bat || 0],
+    [t('spMem'), p.o.map(o => o[0]).join(' / ')],
+    [t('spPrice'), pTxt(p, 0)]
+  ];
+}
+
+function renderCmp() {
+  const a = P.find(x => x.id === $('cA').value) || P[0];
+  const b = P.find(x => x.id === $('cB').value) || P[1];
+  $('cmpHead').innerHTML = [a, b].map(p => `<div>${pic(p, true)}<b>${p.n}</b></div>`).join('');
+  const sa = specs(a), sb = specs(b);
+  $('cmpTbl').innerHTML = sa.map((r, i) => {
+    const x = sb[i], w = r[2] !== undefined && r[2] !== x[2];
+    return `<div class="cmp-r"><span>${r[0]}</span><b class="${w && r[2] > x[2] ? 'win' : ''}">${r[1]}</b><b class="${w && x[2] > r[2] ? 'win' : ''}">${x[1]}</b></div>`;
+  }).join('');
+}
+
+function orderMsg(p) {
+  const o = p.o[sel[p.id] || 0];
+  const v = price(p, sel[p.id] || 0);
+  const chosenCol = p.cols && p.cols.length ? ' (' + colName(p.cols[selCol[p.id] || 0]) + ')' : '';
+  const sim = (p.g === 'base' || p.g === 'pro') ? ' ' + (F.esim ? 'eSIM' : 'SIM') : '';
+  return `iMarket (${t(CITY)}): ${p.n} ${o[0]}${chosenCol}${sim}${v > 0 ? ' — ' + fmt(v) : ''}`;
+}
+
+function syncProductUI(pid) {
+  const p = [...P, ...DEV, ...ACC].find(x => x.id === pid);
+  if (!p) return;
+  const i = sel[pid] || 0;
+  const cIdx = selCol[pid] || 0;
+
+  const lBox = $('limg-' + pid);
+  if (lBox) lBox.innerHTML = pic(p, true);
+  const gBox = $('pimg-' + pid);
+  if (gBox) gBox.innerHTML = pic(p, true);
+
+  document.querySelectorAll(`.sw[data-colp="${pid}"]`).forEach(b => {
+    b.classList.toggle('on', +b.dataset.coli === cIdx);
+  });
+  const clbl = $('clbl-' + pid);
+  if (clbl && p.cols && p.cols[cIdx]) clbl.textContent = colName(p.cols[cIdx]);
+
+  document.querySelectorAll(`[data-p="${pid}"]`).forEach(b => {
+    b.classList.toggle('on', +b.dataset.i === i);
+  });
+
+  if ($('lpr-' + pid)) $('lpr-' + pid).textContent = pTxt(p, i);
+  if ($('lin-' + pid)) $('lin-' + pid).textContent = iTxt(p, i);
+  if ($('pr-' + pid)) {
+    $('pr-' + pid).textContent = pTxt(p, i);
+    $('pr-' + pid).classList.toggle('q', !(price(p, i) > 0));
+  }
+  if ($('in-' + pid)) $('in-' + pid).textContent = iTxt(p, i);
+
+  if (pid === $('cA').value || pid === $('cB').value) renderCmp();
+}
+
+function openBuyModal(id) {
+  const p = [...P, ...DEV].find(x => x.id === id);
+  if (!p) return;
+  const curC = selCol[p.id] || 0;
+  const curM = sel[p.id] || 0;
+  const isPhone = p.g === 'base' || p.g === 'pro';
+
+  $('dlg').innerHTML = `
+    <button type="button" class="dlg-close" id="dlgClose" aria-label="Close">✕</button>
+    <div class="dlg-body">
+      <div class="dlg-vis" id="dlg-vis-${p.id}">${pic(p, true)}</div>
+      <div>
+        <div class="dlg-kicker">${p.kicker || 'APPLE'}</div>
+        <h3 class="dlg-title">${p.n}</h3>
+        <div style="font-size:13px;color:var(--mut);margin-top:2px">${p.d || p.disp + '" · ' + p.chip}</div>
+
+        ${p.cols && p.cols.length ? `
+          <div class="dlg-step">${t('stepCol')} <span id="dlgColName">${colName(p.cols[curC])}</span></div>
+          <div class="dlg-cols">${p.cols.map((ck, idx) =>
+            `<button type="button" class="dcol${idx === curC ? ' on' : ''}" data-dcol="${idx}"><i style="background:${colHex(ck)}"></i>${colName(ck)}</button>`
+          ).join('')}</div>
+        ` : ''}
+
+        <div class="dlg-step">${t('stepMem')}</div>
+        <div class="dlg-mems">${p.o.map((o, idx) =>
+          `<button type="button" class="dmem${idx === curM ? ' on' : ''}" data-dmem="${idx}"><b>${o[0]}</b><span>${pTxt(p, idx)}</span></button>`
+        ).join('')}</div>
+
+        ${isPhone ? `
+          <div class="dlg-step">${t('stepNet')}</div>
+          <div class="seg" id="dlgSim">
+            <button type="button" class="${!F.esim ? 'on' : ''}" data-dsim="0">SIM</button>
+            <button type="button" class="${F.esim ? 'on' : ''}" data-dsim="1">eSIM</button>
+          </div>
+        ` : ''}
+
+        <div class="val-box" style="margin-top:18px">
+          <div>
+            <span id="dlgInst">${iTxt(p, curM) || 'Kaspi 0-0-12'}</span>
+            <b id="dlgPrice" style="display:block;font-size:22px">${pTxt(p, curM)}</b>
+          </div>
+          <button type="button" class="buy-pill" style="height:44px;padding:0 22px;font-size:14px" id="dlgOrderBtn">${t('buy')}</button>
+        </div>
+
+        ${p.disp ? `<div class="dlg-specs">${specs(p).slice(0, 6).map(r => `<div class="dsp"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}</div>` : ''}
+      </div>
+    </div>
+  `;
+
+  $('dlg').showModal();
+  $('dlgClose').onclick = () => $('dlg').close();
+
+  $('dlg').querySelectorAll('[data-dcol]').forEach(btn => {
+    btn.onclick = () => {
+      selCol[p.id] = +btn.dataset.dcol;
+      $('dlg').querySelectorAll('[data-dcol]').forEach(x => x.classList.toggle('on', x === btn));
+      $('dlgColName').textContent = colName(p.cols[selCol[p.id]]);
+      $('dlg-vis-' + p.id).innerHTML = pic(p, true);
+      syncProductUI(p.id);
+    };
+  });
+
+  $('dlg').querySelectorAll('[data-dmem]').forEach(btn => {
+    btn.onclick = () => {
+      sel[p.id] = +btn.dataset.dmem;
+      $('dlg').querySelectorAll('[data-dmem]').forEach(x => x.classList.toggle('on', x === btn));
+      $('dlgPrice').textContent = pTxt(p, sel[p.id]);
+      $('dlgInst').textContent = iTxt(p, sel[p.id]) || 'Kaspi 0-0-12';
+      syncProductUI(p.id);
+    };
+  });
+
+  const dSim = $('dlgSim');
+  if (dSim) {
+    dSim.onclick = e => {
+      const b = e.target.closest('[data-dsim]');
+      if (!b) return;
+      F.esim = +b.dataset.dsim;
+      dSim.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+      document.querySelectorAll('#simSeg button').forEach(x => x.classList.toggle('on', +x.dataset.sim === F.esim));
+      $('dlg').querySelectorAll('[data-dmem]').forEach(x => {
+        x.querySelector('span').textContent = pTxt(p, +x.dataset.dmem);
+      });
+      $('dlgPrice').textContent = pTxt(p, sel[p.id]);
+      $('dlgInst').textContent = iTxt(p, sel[p.id]) || 'Kaspi 0-0-12';
+      renderLatest();
+      renderGrid();
+      renderCmp();
+    };
+  }
+
+  $('dlgOrderBtn').onclick = () => wa(curCity().wa, orderMsg(p));
+}
+
+function renderBr() {
+  $('brList').innerHTML = Object.values(CITIES).map(b => {
+    const isAct = b.k === CITY;
+    const addr = L === 'kk' ? b.addrKk : b.addrRu;
+    const hrs = L === 'kk' ? b.hrsKk : b.hrsRu;
+    return `<div class="br-card${isAct ? ' on' : ''}">
+      <div class="br-top">
+        <b>${t(b.k)}</b>
+        ${b.k === 'astana' ? `<span class="br-badge">${t('main')}</span>` : ''}
+      </div>
+      <div class="br-addr">${addr}</div>
+      <div class="br-hrs">${hrs} · ${b.phoneFmt}</div>
+      <div class="br-btns">
+        <button type="button" class="br-btn${isAct ? ' act' : ''}" data-setcity="${b.k}">${isAct ? '✓ ' + t('selectedCity') : t('selectCity')}</button>
+        <a class="br-btn wa" href="https://wa.me/${b.wa}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="br-btn" href="${b.mapUrl}" target="_blank" rel="noopener noreferrer">2GIS ↗</a>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function applyCityUI() {
+  const c = curCity();
+  $('citySel').value = CITY;
+  $('heroStoreTitle').textContent = `iMarket · ${t(CITY)}`;
+  $('d5Sub').textContent = L === 'kk' ? c.delivKk : c.delivRu;
+  $('hdrPhone').href = 'tel:+' + c.wa;
+  $('dockPhone').href = 'tel:+' + c.wa;
+  $('qlMap').href = c.mapUrl;
+  document.querySelectorAll('.js-wa-link').forEach(a => a.href = 'https://wa.me/' + c.wa);
+  document.querySelectorAll('.ti-only').forEach(el => { el.style.display = c.tradein ? '' : 'none'; });
+}
+
+const calcSum = () => Math.min(Math.max(parseFloat($('calcPrice').value) || 0, 0), 5e6);
+function calc() { $('calcResult').textContent = fmt(Math.round(calcSum() / months)); }
+function trade() {
+  const v = TI[$('trM').selectedIndex][1] * parseFloat($('trB').value) * TIC[$('trC').selectedIndex];
+  $('trOut').textContent = '≈ ' + fmt(Math.round(v / 5000) * 5000);
+}
+
+function applyLang() {
+  document.documentElement.lang = L === 'kk' ? 'kk' : 'ru';
+  document.querySelectorAll('[data-i]').forEach(e => { e.innerHTML = t(e.dataset.i); });
+  document.querySelectorAll('[data-ph]').forEach(e => { e.placeholder = t(e.dataset.ph); });
+  document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('on', b.dataset.lang === L));
+  const opts = $('citySel').options;
+  opts[0].textContent = t('astana');
+  opts[1].textContent = t('oral');
+  opts[2].textContent = t('atyr');
+  const keep = $('trC').selectedIndex;
+  $('trC').innerHTML = t('c').map(c => `<option>${c}</option>`).join('');
+  $('trC').selectedIndex = Math.max(0, keep);
+  applyCityUI();
+  renderBr();
+  renderLatest();
+  renderGrid();
+  renderCmp();
+  calc();
+  trade();
+}
+
+function switchCity(newCity) {
+  if (!CITIES[newCity]) return;
+  CITY = newCity;
+  try {
+    localStorage.setItem('city', CITY);
+    const u = new URL(location.href);
+    u.searchParams.set('city', CITY);
+    history.replaceState(null, '', u.toString());
+  } catch (e) {}
+  resetCatalogData();
+  applyCityUI();
+  renderBr();
+  renderLatest();
+  renderGrid();
+  renderCmp();
+  loadSheet();
+}
+
+/* Init */
+$('cA').innerHTML = $('cB').innerHTML = P.map(p => `<option value="${p.id}">${p.n}</option>`).join('');
+$('cA').value = 'i18pm';
+$('cB').value = 'i17p';
+$('trM').innerHTML = TI.map(x => `<option>${x[0]}</option>`).join('');
+
+$('citySel').onchange = e => switchCity(e.target.value);
+document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => {
+  L = b.dataset.lang;
+  try { localStorage.setItem('lang', L); } catch (e) {}
+  applyLang();
+});
+$('cA').onchange = $('cB').onchange = renderCmp;
+['trM', 'trB', 'trC'].forEach(id => $(id).onchange = trade);
+$('calcPrice').oninput = calc;
+$('askInst').onclick = () => wa(curCity().wa, `Рассрочка 0-0-12 (${t(CITY)}): ${calcSum()} ₸ / ${months} мес.`);
+
+$('trForm').onsubmit = e => {
+  e.preventDefault();
+  const cityGen = CITY === 'astana' ? 'Астане' : CITY === 'oral' ? 'Уральске' : 'Атырау';
+  wa(curCity().wa, [
+    `Хочу рассчитать Trade-In в ${cityGen}`,
+    `Модель: ${$('trM').value}`,
+    `Аккумулятор: ${$('trB').selectedOptions[0].text}`,
+    `Состояние: ${$('trC').value}`
+  ].join('\n'));
+};
+
+$('months').onclick = e => {
+  const b = e.target.closest('.mo-btn');
+  if (!b) return;
+  months = +b.dataset.m;
+  document.querySelectorAll('#months .mo-btn').forEach(x => x.classList.toggle('on', x === b));
+  calc();
+};
+
+$('q').oninput = e => { F.q = e.target.value.trim().toLowerCase(); renderGrid(); };
+
+$('catSeg').onclick = e => {
+  const b = e.target.closest('[data-cat]');
+  if (!b) return;
+  F.cat = b.dataset.cat;
+  $('catSeg').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  renderGrid();
+};
+
+$('simSeg').onclick = e => {
+  const b = e.target.closest('[data-sim]');
+  if (!b) return;
+  F.esim = +b.dataset.sim;
+  $('simSeg').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  renderLatest();
+  renderGrid();
+  renderCmp();
+};
+
+$('sortBtn').onclick = () => {
+  F.asc = !F.asc;
+  $('sortBtn').classList.toggle('on', F.asc);
+  renderGrid();
+};
+
+function selectDevice(dev) {
+  F.dev = dev;
+  F.cat = 'all';
+  F.q = '';
+  $('q').value = '';
+  $('catSeg').querySelectorAll('button').forEach((x, idx) => x.classList.toggle('on', idx === 0));
+  renderGrid();
+}
+
+$('catTabs').onclick = e => {
+  const b = e.target.closest('[data-dev]');
+  if (b) selectDevice(b.dataset.dev);
+};
+
+document.querySelectorAll('[data-jump]').forEach(b => {
+  b.onclick = () => {
+    selectDevice(b.dataset.jump);
+    $('catalog').scrollIntoView({ behavior: 'smooth' });
+  };
+});
+
+document.addEventListener('click', e => {
+  const sc = e.target.closest('[data-setcity]');
+  if (sc) { switchCity(sc.dataset.setcity); return; }
+
+  const sw = e.target.closest('.sw[data-colp]');
+  if (sw) {
+    const pid = sw.dataset.colp;
+    selCol[pid] = +sw.dataset.coli;
+    syncProductUI(pid);
+    return;
+  }
+
+  const m = e.target.closest('[data-p][data-i]');
+  if (m) {
+    const pid = m.dataset.p;
+    sel[pid] = +m.dataset.i;
+    syncProductUI(pid);
+    return;
+  }
+
+  const ord = e.target.closest('[data-order]');
+  if (ord) {
+    const p = [...P, ...DEV].find(x => x.id === ord.dataset.order);
+    if (p) wa(curCity().wa, orderMsg(p));
+    return;
+  }
+
+  const wBtn = e.target.closest('[data-watch]');
+  if (wBtn) {
+    const w = DEV.find(x => x.id === wBtn.dataset.watch);
+    if (w) wa(curCity().wa, `iMarket (${t(CITY)}): ${w.n} ${w.o[sel[w.id] || 0][0]}`);
+    return;
+  }
+
+  const op = e.target.closest('[data-open]');
+  if (op) { openBuyModal(op.dataset.open); return; }
+
+  const ac = e.target.closest('[data-acc]');
+  if (ac) { wa(curCity().wa, `iMarket (${t(CITY)}): ${t('adName')}`); return; }
+
+  if (e.target === $('dlg')) $('dlg').close();
+});
+
+applyLang();
+
+/* Google Sheets CSV loader */
+function parseCSV(txt) {
+  const rows = []; let r = [], c = '', q = false;
+  for (let i = 0; i < txt.length; i++) {
+    const ch = txt[i];
+    if (q) {
+      if (ch === '"') { if (txt[i + 1] === '"') { c += '"'; i++; } else q = false; }
+      else c += ch;
+    } else if (ch === '"') q = true;
+    else if (ch === ',') { r.push(c); c = ''; }
+    else if (ch === '\n') { r.push(c); rows.push(r); r = []; c = ''; }
+    else if (ch !== '\r') c += ch;
+  }
+  if (c || r.length) { r.push(c); rows.push(r); }
+  return rows;
+}
+const normM = x => String(x).toUpperCase().replace(/\s/g, '').replace('ТБ', 'TB').replace('ГБ', 'GB');
+function cell(v) {
+  v = String(v || '').trim().toLowerCase();
+  if (!v) return null;
+  if (['скоро', 'soon', 'жақында'].includes(v)) return -1;
+  const n = parseInt(v.replace(/[.,]\d{1,2}(?!\d)/g, '').replace(/[^\d-]/g, ''), 10);
+  return (!isNaN(n) && n >= 50000 && n <= 3000000) ? n : undefined;
+}
+
+async function loadSheet() {
+  const sheetUrl = curCity().csv;
+  try {
+    const r = await fetch(sheetUrl + (sheetUrl.includes('?') ? '&' : '?') + '_=' + Date.now(), { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
+    if (!r.ok) return;
+    const rows = parseCSV(await r.text()).slice(1);
+    let hit = 0;
+    rows.forEach(x => {
+      const name = (x[0] || '').trim().toLowerCase();
+      if (name === 'adj') {
+        const a = parseInt(String(x[2]).replace(/[^\d-]/g, ''), 10);
+        ADJ = (!isNaN(a) && Math.abs(a) <= 100000) ? a : 0;
+        hit++;
+        return;
+      }
+      const p = [...P, ...DEV, ...ACC].find(m => m.n.toLowerCase() === name);
+      if (!p) return;
+      const o = p.o.find(m => normM(m[0]) === normM(x[1]));
+      if (!o) return;
+      [[1, 2], [2, 3]].forEach(([k, c]) => {
+        const v = cell(x[c]);
+        if (v !== undefined) o[k] = v;
+      });
+      hit++;
+    });
+    if (hit) { renderLatest(); renderGrid(); renderCmp(); }
+  } catch (e) {}
+}
+loadSheet();
+</script>
+</body>
+</html>
